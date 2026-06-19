@@ -1,9 +1,8 @@
-Agile Sprint Simulator
-
+SPRINTFORGE-X
+An Agile Sprint Simulator
 A console-based Java application that simulates Agile/Scrum sprint planning and execution — manage a product backlog, organize tasks into sprints, assign work to team members, and track velocity over time.
 
 Features
-
 
 Backlog Management – Create and maintain a product backlog of user stories/tasks.
 Sprint Planning – Group tasks into sprints with defined scope and timelines.
