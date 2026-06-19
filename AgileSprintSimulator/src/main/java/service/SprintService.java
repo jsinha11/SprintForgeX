@@ -9,7 +9,7 @@ public class SprintService
 {
     private int sprintCounter = 1;
 
-    public Sprint planSprint(Backlog backlog) 
+    public Sprint planSprint(Backlog<Task> backlog) 
     {
         Sprint sprint = new Sprint(sprintCounter++);
         System.out.println("Planning Sprint " + sprint.getSprintNumber());

@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Sprint 
 {
-    private int sprintNumber;
-    private int capacity;
-    private List<Task> tasks = new ArrayList<>();
+    private final int sprintNumber;
+    private final int capacity;
+    private final List<Task> tasks = new ArrayList<>();
 
     public Sprint(int sprintNumber) 
     {

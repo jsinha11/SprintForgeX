@@ -1,19 +1,20 @@
 package ui;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 import model.Backlog;
 import model.Sprint;
 import model.Task;
 import model.TeamMember;
 import service.SprintService;
 import service.VelocityTracker;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class ConsoleMenu 
 {
     private Scanner scanner = new Scanner(System.in);
-    private Backlog backlog = new Backlog();
+    private Backlog<Task> backlog = new Backlog<>();
     private SprintService sprintService = new SprintService();
     private VelocityTracker velocityTracker = new VelocityTracker();
     private List<TeamMember> team = new ArrayList<>();
