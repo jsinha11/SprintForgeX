@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Backlog 
@@ -9,6 +10,10 @@ public class Backlog
 
     public void addTask(Task t) 
     {
+        if (t == null) 
+        {
+            throw new IllegalArgumentException("Task cannot be null");
+        }
         tasks.add(t);
     }
 
@@ -19,7 +24,7 @@ public class Backlog
 
     public List<Task> getTasks() 
     {
-        return tasks;
+        return Collections.unmodifiableList(tasks);
     }
 
     public void display() 

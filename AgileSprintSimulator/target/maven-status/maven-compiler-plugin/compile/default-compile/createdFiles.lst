@@ -1,0 +1,8 @@
+model\Task.class
+Main.class
+service\SprintService.class
+model\TeamMember.class
+model\Sprint.class
+service\VelocityTracker.class
+ui\ConsoleMenu.class
+model\Backlog.class
