@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Sprint;
 
+
 public class VelocityTracker 
 {
-    private List<Integer> velocities = new ArrayList<>();
+    private final List<Integer> velocities = new ArrayList<>();
 
     public void recordSprint(Sprint s) 
     {

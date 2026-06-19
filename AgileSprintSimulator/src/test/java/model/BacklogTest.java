@@ -1,14 +1,21 @@
 package model;
 
-import org.junit.jupiter.api.Test;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import model.Backlog;
+import model.Task;
 
 public class BacklogTest {
 
     @Test
     public void addAndRemoveTasks() {
-        Backlog backlog = new Backlog();
+        Backlog<Task> backlog = new Backlog<>();
         Task task1 = new Task(1, "First", 3);
         Task task2 = new Task(2, "Second", 5);
 
@@ -29,7 +36,7 @@ public class BacklogTest {
 
     @Test
     public void testAddTaskThrowsOnNull() {
-        Backlog backlog = new Backlog();
+        Backlog<Task> backlog = new Backlog<>();
         assertThrows(IllegalArgumentException.class, () -> backlog.addTask(null));
     }
 }

@@ -1,17 +1,23 @@
 package service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+
 import model.Backlog;
 import model.Sprint;
 import model.Task;
 import model.TeamMember;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import service.SprintService;
+import service.VelocityTracker;
 
 class SprintServiceTest {
 
     @Test
     void planSprintAddsOnlyTodosFromBacklog() {
-        Backlog backlog = new Backlog();
+        Backlog<Task> backlog = new Backlog<>();
         Task todo = new Task(1, "Small", 5);
         Task doneTask = new Task(2, "Done", 8);
         doneTask.setStatus("DONE");

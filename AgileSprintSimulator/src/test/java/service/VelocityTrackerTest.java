@@ -1,11 +1,14 @@
 package service;
 
-import model.Sprint;
-import model.Task;
-import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import model.Sprint;
+import model.Task;
 
 class VelocityTrackerTest {
 
