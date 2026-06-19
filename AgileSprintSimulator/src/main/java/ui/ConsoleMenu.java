@@ -32,21 +32,27 @@ public class ConsoleMenu
             System.out.println("\n1. View Backlog\n2. Add Task\n3. Plan Sprint\n4. Assign Task\n5. Complete Task\n6. Complete Sprint\n7. View Velocity\n0. Exit");
             System.out.print("Choice: ");
             choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) 
             {
                 case 1: backlog.display(); break;
                 case 2:
                     System.out.print("Task title: ");
-                    scanner.nextLine();
                     String title = scanner.nextLine();
                     System.out.print("Story points: ");
                     int pts = scanner.nextInt();
+                    scanner.nextLine();
                     backlog.addTask(new Task(taskIdCounter++, title, pts));
                     System.out.println("Task added!"); break;
                 case 3:
                     currentSprint = sprintService.planSprint(backlog);
-                    currentSprint.display(); break;
+                    if (currentSprint == null) {
+                        System.out.println("No sprint could be planned. Add tasks to the backlog first.");
+                    } else {
+                        currentSprint.display();
+                    }
+                    break;
                 case 4:
                     if (currentSprint == null) { System.out.println("Plan a sprint first!"); break; }
                     System.out.print("Task ID: "); int tid = scanner.nextInt();
