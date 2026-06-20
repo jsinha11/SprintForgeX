@@ -10,8 +10,6 @@ import model.Backlog;
 import model.Sprint;
 import model.Task;
 import model.TeamMember;
-import service.SprintService;
-import service.VelocityTracker;
 
 class SprintServiceTest {
 
