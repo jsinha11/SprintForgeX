@@ -8,10 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
-import model.Backlog;
-import model.Task;
 
 public class BacklogTest {
+
+    private IllegalArgumentException assertThrows2;
+
+    public BacklogTest(IllegalArgumentException assertThrows2) {
+        this.assertThrows2 = assertThrows2;
+    }
 
     @Test
     public void addAndRemoveTasks() {
@@ -37,6 +41,14 @@ public class BacklogTest {
     @Test
     public void testAddTaskThrowsOnNull() {
         Backlog<Task> backlog = new Backlog<>();
-        assertThrows(IllegalArgumentException.class, () -> backlog.addTask(null));
+        assertThrows2 = assertThrows(IllegalArgumentException.class, () -> backlog.addTask(null));
+    }
+
+    public void setAssertThrows2(IllegalArgumentException assertThrows2) {
+        this.assertThrows2 = assertThrows2;
+    }
+
+    public IllegalArgumentException getAssertThrows2() {
+        return assertThrows2;
     }
 }
